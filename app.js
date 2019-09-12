@@ -9,7 +9,7 @@ app.get("/", function (req, res) {
     res.render('form');
 });
 
-app.get("/results", function (req, res) {
+app.get("/results", function (req, res){
     var search_key = req.query.search;
     var url = "http://www.omdbapi.com/?s=" + search_key + "&apikey=b19362a8";
     request(url,
