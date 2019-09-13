@@ -303,7 +303,6 @@
         height: 100% !important;
     }
 
-    body>div {}
 
     #header {
 
@@ -520,7 +519,7 @@
 
     #search {
         margin-top: 30%;
-               height: 40%;
+        height: 40%;
     }
 
     .searchbar {
@@ -541,7 +540,7 @@
         width: 0;
         caret-color: transparent;
         line-height: 42px;
-       font-size: 90%;
+        font-size: 90%;
         transition: width 0.4s linear;
         font-family: 'Montserrat', sans-serif;
 
@@ -627,9 +626,10 @@
         font-family: 'Chilanka', cursive;
 
     }
+
     #search {
         margin-top: 30%;
-               height: 40%;
+        height: 40%;
     }
 
     .searchbar {
@@ -650,7 +650,7 @@
         width: 0;
         caret-color: transparent;
         line-height: 42px;
-       font-size: 90%;
+        font-size: 90%;
         transition: width 0.4s linear;
         font-family: 'Montserrat', sans-serif;
 

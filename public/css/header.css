@@ -4,7 +4,7 @@ x
 .logo-div {
     width: 100%;
     position: absolute;
-    
+
     align-self: auto;
     display: flex;
     margin-bottom: auto;
@@ -14,9 +14,11 @@ x
     z-index: 1;
 
 }
-.logo>img{
-    height:70px;
+
+.logo>img {
+    height: 70px;
 }
+
 .nav-bar>ul {
     width: auto;
     position: absolute;
