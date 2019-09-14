@@ -1,8 +1,9 @@
 var express = require("express");
 var app = express();
 var request = require('request');
-app.use(express.static('public'));
+app.use(express.static('\public'));
 
+var bodyParser =require("body-parser");
 
 app.set("view engine", "ejs");
 
@@ -29,6 +30,31 @@ app.get("/results", function (req, res){
             }
         });
 
+});
+app.get("/results/:movie_title", function (req, res){
+    var title = req.params.movie_title
+    console.log(title);
+    
+    var url = "http://www.omdbapi.com/?t=" + title + "&apikey=b19362a8";
+    request(url,
+        function (error, response, body ) {
+            if (!error && response.statusCode == 200) {
+                var data = JSON.parse(body);
+                if(data.Response === "False") {
+                    res.render('404');
+                } else     {
+                    //res.send(data);
+                             res.render("movie_result", {
+                               data: data
+                             });
+                           }
+
+            }
+        });
+
+});
+app.get("/test", function (req, res) {
+    res.render('test');
 });
 app.get("/:any", function (req, res) {
     res.render('404');

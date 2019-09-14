@@ -9,11 +9,17 @@
     </div>
 
 
-    <div id="results" id="style-1" class=" mx-auto  list-group">
+    <ul id="results" id="style-1" class=" mx-auto  list-group">
         <% data["Search"].forEach(function(movie) { %>
-        <a href="#" class=" tex-center list-group-item list-group-item-action "><strong><%= movie["Title"]%></strong>-<span class="year"><%= movie["Year"]%> </span><span class="type">[<%= movie["Type"]%>]</span></a>
+        <li ><a href="results/<%=movie['Title']%>" name='<%= movie["Title"]%>'style="border-radius: 0px" id="result-items" class=" tex-center list-group-item list-group-item-action" ><strong><%= movie["Title"]%></strong> <span
+                class="badge badge-pill badge-primary"><%= movie["Type"]%></span> <span
+                class="badge badge-dark badge-pill"><%= movie["Year"]%> </span></a></li>
         <% }); %>
-    </div>
+    </ul>
+ 
+
+
+
     <section class="back-to-search mix-auto">
         <a id="back-to-search" href="/"><small> back to search</small></a>
     </section>
