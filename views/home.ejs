@@ -1,0 +1,37 @@
+<% include partials/header %>
+
+
+
+
+
+<div style="padding: 2em 0" class="container">
+    <div class="row text-center justify-content-center mb-5" data-aos="fade-up">
+        <div class=" header col-lg-12 mb-5 text-center">
+            <h1 id="header" class=" display-1 mx-auto">Find a Movie </h1>
+            <div class="col-lg-6 mx-auto">
+
+                <p><span class="brand-logo">UWATCH</span><span id="discription"> is a Movie and series search app it
+                        uses omdb api to retrive data from omdb servers and show's you the results</span>
+                </p>
+                <div id="search" class="container mx-auto">
+                    <form action="/results" method="get">
+                        <div class="d-flex justify-content-center h-100">
+
+                            <div class="searchbar">
+
+                                <input class="search_input" type="text" name="search"
+                                    placeholder="Search Movie By Name">
+
+                                <button type="submit" class="search_icon"> <i class="fas fa-search"></i></button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<% include partials/footer %>

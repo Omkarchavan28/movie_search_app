@@ -9,7 +9,7 @@ app.set("view engine", "ejs");
 
 var total_pages = 1;
 app.get("/", function (req, res) {
-    res.render('form');
+    res.render('home');
 });
 
 app.get("/results", function (req, res){
@@ -23,7 +23,8 @@ app.get("/results", function (req, res){
                     res.render('404');
                 } else     {
                              res.render("results", {
-                               data: data
+                               data: data,
+                               search_key:search_key
                              });
                            }
 
@@ -35,7 +36,7 @@ app.get("/results/:movie_title", function (req, res){
     var title = req.params.movie_title
     console.log(title);
     
-    var url = "http://www.omdbapi.com/?t=" + title + "&apikey=b19362a8";
+    var url = "http://www.omdbapi.com/?t=" + title + "&plot=full&apikey=b19362a8";
     request(url,
         function (error, response, body ) {
             if (!error && response.statusCode == 200) {

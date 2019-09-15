@@ -11,26 +11,32 @@ html {
     color: aliceblue;
 
 }
-#result-page>h1{
-    
-    margin-top: 10%;
-    text-align: center;
-    margin-bottom: auto;
-    font-size: 100px;
-   
-    z-index: 1
+#Result_header{
+    font-family:'pennaregular';
 }
-#results{
-    
-    margin-top: 2%;
-    width: 50%;
-    align-content: center;
-    background-color: black;
+#res_dis{
+    font-family:  sans-serif;
+    padding: 0;
+    margin: 0;
+    color: #353b48;
+    font-size: 20px;
+}
+#res_dis_search{
+    font-family: 'Gayathri', sans-serif;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-size: 35px;
+}
+.info{
+    color: #fff;
+    font-size: 80%;
 }
 .list-group{
     max-height: 300px;
     overflow:scroll;
     overflow-x: hidden;
+    border-radius: 10px;
     -webkit-overflow-scrolling: touch;
 
 }
@@ -56,35 +62,7 @@ html {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: #0288d1;
 }
-
-
-.back-to-search {
-    margin-top: 10px;
-    align-items: center;
-    text-align: center;
-}
-a>small {
-	text-align: center;
-	font-size: 20px;
-	text-decoration: none;
-    color: white;
-   
-}
-a>small:hover{
- color: #f5f5f5;
-
-}
-.back-to-search>a:hover {
-    text-decoration:none;
-}
-.year{
-    font-size: 10px;
-}
-.type{
-    text-align: left;
-    font-size: 15px;
-}
-.active{
-    background-color: black;
-    color: yellow;
+.badge-pill{
+    display: block;
+    height: 100%;
 }
