@@ -7,26 +7,23 @@ html {
     padding: 0;
     background: #0288d1 !important;
     margin: 0;
-    height: 100vh;
-    width: 100vw;
+    
 }
 #main_container{
     padding-top: 20%;
 }
 #header {
-  border-radius: 5px;
     text-align: center;
     font-family: 'pennaregular';
     color: #fff;
-    font-size: 150px;
 }
 
 #discription{
-    font-family: 'pennaregular', sans-serif;
+    font-family: 'pennaregular';
     padding: 0;
     margin: 0;
     color: #fff;
-    font-size: 40px;
+    font-size: 2em;
 }
 
 

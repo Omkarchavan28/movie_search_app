@@ -13,24 +13,29 @@ html {
 }
 #Result_header{
     font-family:'pennaregular';
+    font-size: 7em;
 }
 #res_dis{
     font-family:  sans-serif;
     padding: 0;
     margin: 0;
-    color: #353b48;
-    font-size: 20px;
+    color: #fff;
+    font-size: 1em;
+
 }
 #res_dis_search{
-    font-family: 'Gayathri', sans-serif;
+    font-family: 'pennaregular';
     padding: 0;
     margin: 0;
     color: #fff;
-    font-size: 35px;
+    font-size: 3em;
 }
 .info{
     color: #fff;
     font-size: 80%;
+}
+.list-group-contanier{
+    width: 80%;
 }
 .list-group{
     max-height: 300px;
@@ -39,6 +44,9 @@ html {
     border-radius: 10px;
     -webkit-overflow-scrolling: touch;
 
+}
+.list-group-item-action:focus, .list-group-item-action:hover{
+background-color: #0e91d8;
 }
 /*######scrollbar#########*/
 

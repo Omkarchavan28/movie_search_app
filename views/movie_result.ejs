@@ -1,46 +1,45 @@
-<head>
-    <title>Result &mdash;<%= data['Title'] %></title>
- 
-</head>
-
-<body>
+<% include partials/header %>
+<link rel="stylesheet" href="/css/movie_result.css">
 
 
 
-    <div class="container ">
-        <div class=" row  ">
-            <div class="col-lg-12 text-center">
-                <img src="<%=data['Poster']%>" alt="Image">
-                <h1><%= data['Title']%>(<%= data['Year'] %>)</h1>
-            </div>
+<div class="container p-5 main-box mx-auto">
+    <div class="row">
+        <div class="col-md-4 p-2 text-center">
+            <img id="poster"src="<%=data['Poster']%>" alt="poster">
         </div>
-        <div class="row">
 
 
-                <div class=" col-12">
-                    <span> Directed by:-<%=data['Director']%></span><br>
-                    <span> Written by:-<%=data['Writer']%></span>
-                    <div>
-                        <i><%= data['Country'] %></i><br>
-                        <i><%= data['Runtime'] %></i>
-                    </div>
-                    <span>'<%= data['Rated'] %>'</span><br>
-                    <span><%= data['imdbRating'] %>/10</span><br>
 
-                    <strong>Languages:<i> <%= data['Language'] %></i>
-                    </strong><br>
-                    <strong>
-                        Genre:<i> <%= data['Genre']%>.</i>
-                    </strong>
-
-
-                    <br>
-                    <p><%= data['Plot'] %></p>
-                    <strong>Actors:<i> <%= data['Actors']%>.</i> </strong>
-
-                </div>
+        <div class="col-md-8 p-4 info-box ">
+            <h1><%= data['Title']%>(<%= data['Year'] %>)</h1>
+            <div class="d-flex justify-content-between basic-info">
+                <i><%= data['Country'] %></i> |
+                <i><%= data['Runtime'] %></i> |
+                <i> <%= data['Language'] %></i> |
+                <i><%= data['Rated'] %></i>
             </div>
-        
+            
+            <div class="writers">
+                <span> Directed by:-<strong><%=data['Director']%></strong></span><br>
+                <span> Written by:-<strong><%=data['Writer']%></strong></span>
+            </div>
+            <!-- <span><%= data['imdbRating'] %>/10</span><br>-->
+            <br>
+            <strong>
+                Genre:<i> <%= data['Genre']%>.</i>
+            </strong>
+            
+            <div id="plot">
+                    <br><p><%= data['Plot'] %></p>
+
+            </div>
+            <strong>Actors:<i> <%= data['Actors']%>.</i> </strong>
+
+        </div>
+
+
 
     </div>
+</div>
 </body>

@@ -9,11 +9,14 @@ app.set("view engine", "ejs");
 
 var total_pages = 1;
 app.get("/", function (req, res) {
+    res.locals.title = "Uwatch";                    // THIS LINE IS KEY
     res.render('home');
 });
 
 app.get("/results", function (req, res){
     var search_key = req.query.search;
+    res.locals.title = "Results-"+search_key;
+    
     var url = "http://www.omdbapi.com/?s=" + search_key + "&apikey=b19362a8";
     request(url,
         function (error, response, body ) {
@@ -35,7 +38,8 @@ app.get("/results", function (req, res){
 app.get("/results/:movie_title", function (req, res){
     var title = req.params.movie_title
     console.log(title);
-    
+    res.locals.title = "Results-"+title;
+
     var url = "http://www.omdbapi.com/?t=" + title + "&plot=full&apikey=b19362a8";
     request(url,
         function (error, response, body ) {
@@ -55,10 +59,13 @@ app.get("/results/:movie_title", function (req, res){
 
 });
 app.get("/test", function (req, res) {
+    
     res.render('test');
 });
 app.get("/:any", function (req, res) {
     res.status(404);
+    res.locals.title = "404 Not Found";
+
     res.render('404');
 });
 var listener = app.listen(3001, function () {
