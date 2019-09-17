@@ -58,6 +58,7 @@ app.get("/test", function (req, res) {
     res.render('test');
 });
 app.get("/:any", function (req, res) {
+    res.status(404);
     res.render('404');
 });
 var listener = app.listen(3001, function () {
