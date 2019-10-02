@@ -58,6 +58,12 @@ app.get("/results/:movie_title", function (req, res){
         });
 
 });
+
+app.get("/aboutus", function (req, res) {
+    res.locals.title = "About Us";
+
+    res.render('aboutus');
+});
 app.get("/test", function (req, res) {
     
     res.render('test');
