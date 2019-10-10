@@ -169,8 +169,7 @@ app.get('/logout',function(req,res){
 app.get("/:any", function (req, res) {
     res.status(404);
     res.locals.title = "404 Not Found";
-    res.send("404");
-   // res.render('404');
+   res.render('404');
 });
 
 var listener = app.listen(3001, function () {
