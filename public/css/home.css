@@ -5,7 +5,7 @@ body,
 html {
     margin: 0;
     padding: 0;
-    background: #0288d1 !important;
+    background: #0288D1 !important;
     margin: 0;
     width: 100%;
     
@@ -53,14 +53,14 @@ html {
 .searchbar:hover>.search_input {
     padding: 0 10px;
     width: 80%;
-    caret-color: #0288d1;
+    caret-color: #0288D1;
     transition: width 0.4s linear;
     cursor: pointer;
 }
 
 .searchbar:hover>.search_icon {
     background: white;
-    color: #0288d1;
+    color: #0288D1;
     cursor: pointer;
 }
 

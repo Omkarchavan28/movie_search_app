@@ -4,7 +4,7 @@ html {
     height: 100%;
     width: 100%;
     padding: 0;
-    background: #0288d1 !important;
+    background: #384AEB !important;
     margin: 0;
     color: #fff;
 
@@ -21,7 +21,7 @@ html {
     padding: 0;
 }
 .info-box{
-    background-color: #0288d1;
+    background-color: #384AEB;
     border-radius: 25px;
 }
 .basic-info{

@@ -5,3 +5,16 @@
     color: #353B48 !important;
 
 }
+#login{
+
+float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+ul{
+    list-style: none;
+}
