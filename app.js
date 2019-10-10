@@ -11,11 +11,7 @@ app.use(express.static('public'));
 app.use(express.static('aroma'));
 app.set("view engine", "ejs");
 //body parser
-app.use(function(req,res,next){
-res.locals.currentUser= req.user;
-next();
-});
-app.use
+
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ 
     extended: true
@@ -49,15 +45,20 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 //routes
 
-
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    next();
+  });
 
 var total_pages = 1;
 app.get("/", function (req, res) {
+    
     res.locals.title = "Uwatch";                    // THIS LINE IS KEY
-    res.render('home',{currentUser:req.user});
+    res.render('home');
 });
 
 app.get("/results", function (req, res){
+    
     var search_key = req.query.search;
     res.locals.title = "Results-"+search_key;
     
@@ -82,25 +83,7 @@ app.get("/results", function (req, res){
 });
 
 app.get("/temp", function (req, res){
-    var title = "Captain America: The First Avenger";
-    res.locals.title = "Results-"+title;
-
-    var url = "http://www.omdbapi.com/?t=" + title + "&plot=full&apikey=b19362a8";
-    request(url,
-        function (error, response, body ) {
-            if (!error && response.statusCode == 200) {
-                var data = JSON.parse(body);
-                if(data.Response === "False") {
-                    res.render('404');
-                } else     {
-                    //res.send(data);
-                    res.render("temp_result", {
-                               data: data
-                             });
-                           }
-
-            }
-        });
+   res.render('temp_result');
 
 });
 app.get("/results/:movie_title", function (req, res){

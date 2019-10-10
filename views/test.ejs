@@ -1,84 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
+<% include partials/header %>
+<link rel="stylesheet" href="/css/movie_result.css">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Aroma Shop - Blog</title>
-    <link rel="icon" href="img/Fevicon.png" type="image/png">
-    <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="vendors/linericon/style.css">
-    <link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
-    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
 
-    <link rel="stylesheet" href="css/style.css">
-</head>
 
-<body>
-    <!--================ Start Header Menu Area =================-->
-    <header class="header_area">
-        <div class="main_menu">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container">
-                    <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                                    aria-haspopup="true" aria-expanded="false">Shop</a>
-
-                            </li>
-                            <li class="nav-item active submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                                    aria-haspopup="true" aria-expanded="false">Blog</a>
-
-                            </li>
-                            <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                                    aria-haspopup="true" aria-expanded="false">Pages</a>
-
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        </ul>
-
-                        <ul class="nav-shop">
-
-                            <li class="nav-item"><a class="button button-header" href="#">Log In</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+<div class="container p-5 main-box mx-auto">
+    <div class="row">
+        <div class="col-md-4 p-2 text-center">
+            <img id="poster"src="<%=data['Poster']%>" alt="poster">
         </div>
-    </header>
-    <!--================ End Header Menu Area =================-->
-</body>
-<link rel="icon" href="img/Fevicon.png" type="image/png">
-<link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
-<link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
-<link rel="stylesheet" href="vendors/linericon/style.css">
-<link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
-<link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
-<link rel="stylesheet" href="css/style.css">
-<script src="vendors/jquery/jquery-3.2.1.min.js"></script>
-<script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
-<script src="vendors/skrollr.min.js"></script>
-<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-<script src="vendors/nice-select/jquery.nice-select.min.js"></script>
-<script src="vendors/jquery.ajaxchimp.min.js"></script>
-<script src="vendors/mail-script.js"></script>
-<script src="js/main.js"></script>
-</body>
 
-</html>
+
+
+        <div class="col-md-8 p-4 info-box ">
+            <h1><%= data['Title']%>(<%= data['Year'] %>)</h1>
+            <div class="d-flex justify-content-between basic-info">
+                <i><%= data['Country'] %></i> |
+                <i><%= data['Runtime'] %></i> |
+                <i> <%= data['Language'] %></i> |
+                <i><%= data['Rated'] %></i>
+            </div>
+            
+            <div class="writers">
+                <span> Directed by:-<strong><%=data['Director']%></strong></span><br>
+                <span> Written by:-<strong><%=data['Writer']%></strong></span>
+            </div>
+            <span><%= data['imdbRating'] %>/10</span><br>
+            <br>
+            <strong>
+                Genre:<i> <%= data['Genre']%>.</i>
+            </strong>
+            
+            <div id="plot">
+                    <br><p><%= data['Plot'] %></p>
+
+            </div>
+            <strong>Actors:<i> <%= data['Actors']%>.</i> </strong>
+
+        </div>
+
+
+
+    </div>
+</div>
+</body><% include partials/header %>
+<link rel="stylesheet" href="/css/movie_result.css">
+
+
+
+<div class="container p-5 main-box mx-auto">
+    <div class="row">
+        <div class="col-md-4 p-2 text-center">
+            <img id="poster"src="<%=data['Poster']%>" alt="poster">
+        </div>
+
+
+
+        <div class="col-md-8 p-4 info-box ">
+            <h1><%= data['Title']%>(<%= data['Year'] %>)</h1>
+            <div class="d-flex justify-content-between basic-info">
+                <i><%= data['Country'] %></i> |
+                <i><%= data['Runtime'] %></i> |
+                <i> <%= data['Language'] %></i> |
+                <i><%= data['Rated'] %></i>
+            </div>
+            
+            <div class="writers">
+                <span> Directed by:-<strong><%=data['Director']%></strong></span><br>
+                <span> Written by:-<strong><%=data['Writer']%></strong></span>
+            </div>
+            <span><%= data['imdbRating'] %>/10</span><br>
+            <br>
+            <strong>
+                Genre:<i> <%= data['Genre']%>.</i>
+            </strong>
+            
+            <div id="plot">
+                    <br><p><%= data['Plot'] %></p>
+
+            </div>
+            <strong>Actors:<i> <%= data['Actors']%>.</i> </strong>
+
+        </div>
+
+
+
+    </div>
+</div>
+</body>
