@@ -1,4 +1,6 @@
-
+.nb{
+  z-index: 100;
+}
 .brand-logo{
     font-family: 'f5.6regular';
     font-size: xx-large !important;
