@@ -142,6 +142,8 @@ app.post("/register",function(req,res){
 });
 //login
 app.get('/login',function(req,res){
+    res.locals.title = "Login";
+
     res.render("login");
 });
 
