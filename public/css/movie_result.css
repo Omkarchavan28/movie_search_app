@@ -1,39 +1,54 @@
-body,
-html {
 
-    height: 100%;
-    width: 100%;
+
+.success-box {
+    margin: 50px 0;
+    padding: 10px 10px;
+    border: 1px solid #eee;
+    background: #f9f9f9;
+}
+
+.success-box img {
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.success-box>div {
+    vertical-align: top;
+    display: inline-block;
+    color: #888;
+}
+
+
+
+/* Rating Star Widgets Style */
+.rating-stars ul {
+    list-style-type: none;
     padding: 0;
-    background: #0288D1 !important;
-    margin: 0;
-    color: #fff;
+
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.rating-stars ul>li.star {
+    display: inline-block;
 
 }
-.main-box{
-    margin: 5% 0;
-    background-color: #fff;
-    border-radius: 25px;
-}
-#poster{
-    height: 25em;
-    border: 3px solid #353b48;
-    border-radius: 25px;
-    padding: 0;
-}
-.info-box{
-    background-color: #384AEB;
-    border-radius: 25px;
-}
-.basic-info{
-    margin-bottom: .5rem;
-}
-.writers{
 
+/* Idle State of the stars */
+.rating-stars ul>li.star>i.fa {
+    font-size: 2.5em;
+    /* Change the size of the stars */
+    color: #ccc;
+    /* Color on idle state */
 }
-#plot{
-    font-family:  sans-serif;
-    padding: 0;
-    margin: 0;
-    color: #fff;
-    font-size: 1em;
+
+/* Hover state of the stars */
+.rating-stars ul>li.star.hover>i.fa {
+    color: #0288D1;
+}
+
+/* Selected state of the stars */
+.rating-stars ul>li.star.selected>i.fa {
+    color: #FFCC36;
 }

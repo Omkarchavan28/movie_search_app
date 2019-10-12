@@ -183,7 +183,8 @@ body{
 }
 
 .collapsed-heading {
-	margin: 0;
+	margin: 10px;
+
 }
 
 .collapsed-text {

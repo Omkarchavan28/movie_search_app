@@ -1,39 +1,55 @@
 <% include partials/header %>
+
 <body>
-<link rel="stylesheet" href="/css/results.css">
+    <link rel="stylesheet" href="/css/results.css">
+    <%console.log('-------------------------------')%>
 
 
 
 
-<div  class="container">
-    <div class="row text-center justify-content-center mb-5" data-aos="fade-up">
-        <div class="col-12 mb-5 text-center">
-            <h1 id="Result_header" class=" display-1 mx-auto">Results</h1>
-            <div class="col-lg-12 mx-auto">
 
-                                   <span id="res_dis">
-                        All Movies and Tv/Web series with <br> "<i id="res_dis_search"><%=search_key%></i> " in their names.
-                        
+    <div class="container">
+        <div class="row text-center justify-content-center mb-5" data-aos="fade-up">
+            <div class="col-12 mb-5 text-center">
+                <h1 id="Result_header" class=" display-1 mx-auto">Results</h1>
+                <div class="col-lg-12 mx-auto">
+
+                    <span id="res_dis">
+                        All Movies and Tv/Web series with <br> "<i id="res_dis_search"><%=search_key%></i> " in their
+                        names.
+
                     </span>
-                
 
-                <div class="container mx-auto list-group-contanier ">
-                    
-                        <span class=" d-flex info justify-content-start" >*click on movie for more info</span>
+
+                    <div class="container mx-auto list-group-contanier ">
+
+                        <span class=" d-flex info justify-content-start">*click on movie for more info</span>
                         <ul id="results" id="style-1" class=" mx-auto  list-group">
-                                <% data["Search"].forEach(function(movie) { %>
-                                <li><a href="results/<%=movie['Title']%>" name='<%= movie["Title"]%>' style="border-radius: 0px" id="result-items"
-                                        class="d-flex list-group-item list-group-item-action"><strong class="justify-content-start"><%= movie["Title"]%></strong> <span
-                                            class="badge badge-primary badge-pill"> <%= movie["Type"]%> </span> <span
-                                            class="badge badge-dark badge-pill" > <%= movie["Year"]%> </span></a></li>
-                                <% }); %>
-                            </ul>
+                            <% data["Search"].forEach(function(movie) { %>
+
+                            <li>
+                                <a href="<%= movie["Title"]%>" name='<%= movie["Title"]%>' style="border-radius: 0px" id="result-items"
+                                    class="d-flex list-group-item list-group-item-action">
+                                    <strong class="justify-content-start"><%= movie["Title"]%></strong>
+                                    <span class="badge badge-primary badge-pill"><%= movie["Type"]%></span>
+                                    <span class="badge badge-dark badge-pill"> <%= movie["Year"]%></span>
+                                </a>
+                            </li>
+                            <%allmovies.forEach(function(movieInAll){%>
+                            <% if(movie['Title']==movieInAll['title']){ %>
+                            <script>
+                                $("li > a").attr("href", "results/<%=movieInAll['_id']%>");
+                            </script>
+                            <%}%>
+                           <% });%>
+                            <%});%>
+                        </ul>
+                    </div>
+
                 </div>
-    
             </div>
         </div>
     </div>
-</div>
 
 
 
@@ -43,4 +59,4 @@
 
 
 
-<% include partials/footer %>
+    <% include partials/footer %>
