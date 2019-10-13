@@ -67,7 +67,8 @@ app.get("/", function (req, res) {
     res.render('home');
 });
 
-app.post("/results/:id/comments", (req, res) => {
+app.post("/results/:id/comments",isLoggedIn,function (req, res)  {
+    console.log("here")
     Movies.find({
         _id: req.params.id
     }, (err, movie) => {
