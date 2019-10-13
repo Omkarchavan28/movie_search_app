@@ -1,4 +1,3 @@
-console.log('helloo frin r');
 var ratingValue = 0;
 $(document).ready(function () {
 
@@ -58,7 +57,6 @@ function responseMessage(msg) {
 }
 $('#submit').click(function (e) {
     e.preventDefault();
-    console.log('submit clicked');
 var rate=parseInt($('#stars li.selected').last().data('value'), 10);
     $.post("/results/" + docs[0]['_id'] + "", {
         ratinng: rate,

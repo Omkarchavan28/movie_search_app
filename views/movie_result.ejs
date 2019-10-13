@@ -1,10 +1,5 @@
 <% include partials/header %>
-<%console.log('(==============6=================)')%>
-<!-- <% allmovies[0].comments.forEach(function(comment){ %>
-				<strong><%= comment.username %></strong>
-				<p><%= comment.email %></p>
-			
-	<% });%> -->
+
 <!--================Single Product Area =================-->
 <div class="product_image_area">
 	<div class="container">
@@ -236,104 +231,98 @@
 
 								<!------------------------------------------------------------------------->>
 								<% allmovies[0].comments.forEach(function(comment){ %>
-
+								<%console.log(comment)%>
 								<div class="review_item">
 									<div class="media">
 										<div class="d-flex">
 											<img src="../images/product/review-2.png" alt="">
 										</div>
 										<div class="media-body">
-											<h4><%= comment.username %></h4>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
+											<h4><%= comment.username.username %></h4>
+											<%var b=comment.rating;%>
+											<%var i;%>
+											<%for ( i = 0; i <b ; i++) {%>
+											<% document.write('<i class="fa fa-star"></i>');%>
+											<%}%>
+												<!-- <i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i> -->
 										</div>
 									</div>
 									<p><%= comment.message %></p>
+										</div>
+										<% });%>
+										<!------------------------------------------------------------------------->
+									</div>
 								</div>
-								<% });%>
-								<!------------------------------------------------------------------------->
+							</div>
+							<div class="col-lg-6">
+								<div class="review_box">
+									<h4>Add a Review</h4>
+									<div>
+										<p>Your Rating:</p>
+										<section class='rating-widget'>
+
+											<!-- Rating Stars Box -->
+											<div class='rating-stars text-center'>
+												<ul id='stars'>
+													<li class='star' title='Poor' data-value='1'>
+														<i class='fa fa-star '></i>
+													</li>
+													<li class='star' title='Fair' data-value='2'>
+														<i class='fa fa-star '></i>
+													</li>
+													<li class='star' title='Good' data-value='3'>
+														<i class='fa fa-star '></i>
+													</li>
+													<li class='star' title='Excellent' data-value='4'>
+														<i class='fa fa-star '></i>
+													</li>
+													<li class='star' title='WOW!!!' data-value='5'>
+														<i class='fa fa-star '></i>
+													</li>
+												</ul>
+											</div>
+
+
+
+
+											<div class='success-box'>
+												<div class='clearfix'></div>
+
+												<div class='text-message'></div>
+												<div class='clearfix'></div>
+											</div>
+
+										</section>
+									</div>
+									<form action="/results/<%= allmovies[0]['_id'] %>/comments"
+										class="form-contact form-review mt-3" method="POST">
+
+										<div class="form-group">
+											<textarea class="form-control different-control w-100" name="message"
+												id="textarea" cols="30" rows="5" placeholder="Enter Message"></textarea>
+										</div>
+
+
+										<div class="form-group text-center text-md-right mt-3">
+											<button type="submit" id="submit"
+												class="button button--active button-review">Submit
+												Now</button>
+										</div>
+									</form>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-6">
-						<div class="review_box">
-							<h4>Add a Review</h4>
-							<div>
-								<p>Your Rating:</p>
-								<section class='rating-widget'>
 
-									<!-- Rating Stars Box -->
-									<div class='rating-stars text-center'>
-										<ul id='stars'>
-											<li class='star' title='Poor' data-value='1'>
-												<i class='fa fa-star '></i>
-											</li>
-											<li class='star' title='Fair' data-value='2'>
-												<i class='fa fa-star '></i>
-											</li>
-											<li class='star' title='Good' data-value='3'>
-												<i class='fa fa-star '></i>
-											</li>
-											<li class='star' title='Excellent' data-value='4'>
-												<i class='fa fa-star '></i>
-											</li>
-											<li class='star' title='WOW!!!' data-value='5'>
-												<i class='fa fa-star '></i>
-											</li>
-										</ul>
-									</div>
-
-
-
-
-									<div class='success-box'>
-										<div class='clearfix'></div>
-
-										<div class='text-message'></div>
-										<div class='clearfix'></div>
-									</div>
-
-								</section>
-							</div>
-							<form action="/results/<%= allmovies[0]['_id'] %>/comments"
-								class="form-contact form-review mt-3" method="POST">
-
-								<div class="form-group">
-									<input class="form-control" name="username" type="text"
-										placeholder="Enter your name" required>
-								</div>
-								<div class="form-group">
-									<input class="form-control" name="email" type="email"
-										placeholder="Enter email address" required>
-								</div>
-								<div class="form-group">
-									<input class="form-control" name="subject" type="text" placeholder="Enter Subject">
-								</div>
-								<div class="form-group">
-									<textarea class="form-control different-control w-100" name="message" id="textarea"
-										cols="30" rows="5" placeholder="Enter Message"></textarea>
-								</div>
-
-
-								<div class="form-group text-center text-md-right mt-3">
-									<button type="submit" id="submit" class="button button--active button-review">Submit
-										Now</button>
-								</div>
-							</form>
-						</div>
-					</div>
 				</div>
-			</div>
-
-		</div>
 </section>
 <!--================End Product Description Area =================-->
 
 <script>
-	console.log('helloo frin r');
 	var ratingValue = 0;
 	$(document).ready(function () {
 
@@ -398,9 +387,6 @@
 		$.post("/results/<%= allmovies[0]['_id'] %>/comments", {
 			ratinng: rate,
 			message: $("#textarea").val(),
-			username: $("input[name=username]").val(),
-			email: $("input[name=email]").val(),
-			subject: $("input[name=subject]").val(),
 
 		});
 

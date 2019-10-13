@@ -6,9 +6,9 @@ var express = require("express"),
     bodyParser = require("body-parser"),
     mongoose = require('mongoose'),
     Movies = require('./models/movies.js');
-User = require('./models/user.js');
-Comment = require('./models/comment.js');
-flash = require('connect-flash');
+    User = require('./models/user.js');
+    Comment = require('./models/comment.js');
+    flash = require('connect-flash');
 app.use(express.static('public'));
 app.use(express.static('vendors'));
 app.set("view engine", "ejs");
@@ -86,12 +86,26 @@ app.post("/results/:id/comments", (req, res) => {
         if (err) {
             console.log(err);
         } else {
+            var a=req.body;
+            console.log(a)
+            var comment={
+                username:{
+                    id:req.user._id,
+                    username:req.user.username,
+                    email:req.user.email
+                },
+                message:req.body.message,
+                rating:req.body.rating,
 
-            Comment.create(req.body, function (err, data) {
+            }
+
+            Comment.create(comment, function (err, data) {
                 if (err) {
                     console.log("err" + err);
 
                 } else {
+                    console.log(data)
+
                     movie[0].comments.push(data);
                     movie[0].save();
                     res.redirect("/results/" + movie[0]['_id'])
@@ -121,22 +135,18 @@ app.get("/results", function (req, res) {
                     data["Search"].forEach(function (movie) {
 
                         // console.log(seed);
-                        console.log(movie.imdbID);
                         Movies.find({
                             imdbID: movie.imdbID
                         }, function (err, docs) {
                             if (docs.length) {
-                                console.log('Name exists already');
                             } else {
                                 seed = [{
                                     title: movie.Title,
                                     imdbID: movie.imdbID
                                 }];
-                                console.log("no")
                                 Movies.create(seed, function (err, movie) {
                                     if (err) console.log("ERRRRRRR===" + err);
                                     else {
-                                        console.log("movie added");
                                     }
                                 });
                             }
@@ -165,7 +175,6 @@ app.get("/results", function (req, res) {
 });
 
 app.get("/results/:_id", function (req, res) {
-    console.log("hhhhhhhhhhee")
     var id = req.params._id
     var title = '';
     Movies.find({
@@ -187,7 +196,6 @@ app.get("/results/:_id", function (req, res) {
                             if (err) {
                                 console.log(err);
                             } else {
-                                console.log(allmovies)
                                 res.render("movie_result", {
                                     allmovies: allmovies,
                                     data: data
@@ -253,7 +261,6 @@ app.post('/login', passport.authenticate("local", {
     failureRedirect: "/login",
 
 }), function (req, res) {
-    console.log(req.body.username)
 
 });
 //logout

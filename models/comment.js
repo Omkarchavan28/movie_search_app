@@ -4,19 +4,18 @@ var mongoose = require('mongoose');
 var commentSchema = new mongoose.Schema({
 
   username: {
-    id:{
+    id: {
       type: mongoose.Schema.Types.ObjectId,
-      ref:"User"
+      ref: "User"
     },
     username: String,
+    email: String
   },
-  email: {
-    type: String,
-  },
+
   message: {
     type: String
   },
-  ratinng: {
+  rating: {
     type: Number
   }
 });

@@ -178,14 +178,14 @@
     }
     $('#submit').click(function (e) {
         e.preventDefault();
-        console.log('submit clicked');
-        
-        $.post("/test", {
-            username:$("input[name=username]").val(),
-            email:$("input[name=email]").val(),
-            ratingValue:ratingValue
-        });
 
+		console.log('submit clicked');
+		var rate = parseInt($('#stars li.selected').last().data('value'), 10);
+		$.post("/results/<%= allmovies[0]['_id'] %>/comments", {
+			ratinng: rate,
+			message: $("#textarea").val(),
+
+		});
 
     });
 </script>
