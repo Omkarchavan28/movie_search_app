@@ -68,28 +68,28 @@ app.get("/", function (req, res) {
 });
 app.get("/user/:id/fav", isLoggedIn, function (req, res) {
     Movies.find({
-            _id: req.params.id
-        }, (err, movie) => {
-            if (err) {
-                console.log(err);
-            } else {
-                var fav={
-                    id:movie[0]._id,
-                    title:movie[0].title,
-                    imdbID:movie[0].imdbID
-                    
-                };
-                // movie[0].comments.push(data);
-                //     movie[0].save();
-                console.log(req.user.fav_movie)
-                req.user.fav_movie.push(fav);
-                req.user.save()
-                res.redirect("/results/" + req.params.id);
-                console.log(req.user.fav_movie)
+        _id: req.params.id
+    }, (err, movie) => {
+        if (err) {
+            console.log(err);
+        } else {
+            var fav = {
+                id: movie[0]._id,
+                title: movie[0].title,
+                imdbID: movie[0].imdbID
 
-            }
-        });
-    
+            };
+            // movie[0].comments.push(data);
+            //     movie[0].save();
+            console.log(req.user.fav_movie)
+            req.user.fav_movie.push(fav);
+            req.user.save()
+            res.redirect("/results/" + req.params.id);
+            console.log(req.user.fav_movie)
+
+        }
+    });
+
 });
 app.post("/results/:id/comments", isLoggedIn, function (req, res) {
     Movies.find({
@@ -150,14 +150,21 @@ app.get("/results", function (req, res) {
                         Movies.find({
                             imdbID: movie.imdbID
                         }, function (err, docs) {
-                            if (docs.length) {} else {
+                            if (docs.length) {
+
+                                console.log('Name exists already');
+                            } else {
                                 seed = [{
                                     title: movie.Title,
                                     imdbID: movie.imdbID
                                 }];
+                                console.log("no")
+
                                 Movies.create(seed, function (err, movie) {
                                     if (err) console.log("ERRRRRRR===" + err);
-                                    else {}
+                                    else {
+                                        console.log("movie added");
+                                    }
                                 });
                             }
                         });
