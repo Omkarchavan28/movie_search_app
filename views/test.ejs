@@ -175,16 +175,5 @@
         $('.success-box').fadeIn(200);
         $('.success-box div.text-message').html("<span>" + msg + "</span>");
     }
-    $('#submit').click(function (e) {
-        e.preventDefault();
-
-		console.log('submit clicked');
-		var rate = parseInt($('#stars li.selected').last().data('value'), 10);
-		$.post("/results/<%= allmovies[0]['_id'] %>/comments", {
-			ratinng: rate,
-			message: $("#textarea").val(),
-
-		});
-
-    });
+   
 </script>

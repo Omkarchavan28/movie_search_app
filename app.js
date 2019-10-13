@@ -58,11 +58,9 @@ app.use(function (req, res, next) {
 });
 
 
-
-
 var total_pages = 1;
 app.get("/", function (req, res) {
-
+    
     res.locals.title = "Uwatch"; // THIS LINE IS KEY
     res.render('home');
 });
@@ -81,11 +79,9 @@ app.get("/user/:id/fav", isLoggedIn, function (req, res) {
             };
             // movie[0].comments.push(data);
             //     movie[0].save();
-            console.log(req.user.fav_movie)
             req.user.fav_movie.push(fav);
             req.user.save()
             res.redirect("/results/" + req.params.id);
-            console.log(req.user.fav_movie)
 
         }
     });
@@ -235,6 +231,17 @@ app.get("/aboutus", function (req, res) {
     res.render('aboutus');
 });
 app.get("/test", isLoggedIn, function (req, res) {
+    id=req.user.fav_movie[0].id
+
+    Movies.find({
+        _id: id
+    }, (err, movie) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(movie)
+    
+        }});
     res.locals.title = "About Us";
     res.render('test');
 });

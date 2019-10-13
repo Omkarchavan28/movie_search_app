@@ -19,14 +19,11 @@ var UserSchema = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: "movies"
     },
-    title: {
-      type: String,
-      unique: true
-    },
+    title: String,
     imdbID: {
       type: String,
-      unique: true
-    }
+      unique: true,
+    },
   }]
 });
 UserSchema.plugin(passportLocalMongoose)
