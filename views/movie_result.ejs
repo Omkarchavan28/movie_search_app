@@ -26,7 +26,8 @@
 					</ul>
 
 					<div class="card_area d-flex align-items-center">
-						<a class="icon_btn" id="fav-btn" href="/user/<%= allmovies[0]['_id'] %>/fav"><i class="lnr lnr lnr-heart"></i></a>
+						<a class="icon_btn" id="fav-btn" href="/user/<%= allmovies[0]['_id'] %>/fav"><i
+								class="lnr lnr lnr-heart"></i></a>
 					</div>
 					<p><%= data['Plot'] %></p>
 
@@ -258,6 +259,11 @@
 					<div class="col-lg-6">
 						<div class="review_box">
 							<h4>Add a Review</h4>
+
+							<%if(!currentUser){%>
+
+							<div>login to add comment </div>
+							<%}else{%>
 							<div>
 								<p>Your Rating:</p>
 								<section class='rating-widget'>
@@ -295,8 +301,8 @@
 
 								</section>
 							</div>
-							<form action="/results/<%= allmovies[0]['_id'] %>"
-								class="form-contact form-review mt-3" method="GET">
+							<form action="/results/<%= allmovies[0]['_id'] %>" class="form-contact form-review mt-3"
+								method="GET">
 
 								<div class="form-group">
 									<textarea class="form-control different-control w-100" name="message" id="textarea"
@@ -309,6 +315,8 @@
 										class="button button--active button-review"></input>
 								</div>
 							</form>
+							<%}%>
+
 						</div>
 					</div>
 				</div>
@@ -383,16 +391,16 @@
 		console.log('submit clicked');
 		console.log(parseInt($('#stars li.selected').last().data('value'), 10));
 		$.post("/results/<%= allmovies[0]['_id'] %>/comments", {
-			rating: parseInt($('#stars li.selected').last().data('value'), 10),
-			message: $("#textarea").val()
+							rating: parseInt($('#stars li.selected').last().data('value'), 10),
+							message: $("#textarea").val()
 
-		});
-	});
+							});
+							});
 
-	
-</script>
 
-<link rel="stylesheet" href="/css/aroma_style.css">
-<link rel="stylesheet" href="/css/movie_result.css">
+							</script>
 
-<% include partials/footer %>
+							<link rel="stylesheet" href="/css/aroma_style.css">
+							<link rel="stylesheet" href="/css/movie_result.css">
+
+							<% include partials/footer %>
