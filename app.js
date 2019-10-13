@@ -67,18 +67,8 @@ app.get("/", function (req, res) {
     res.render('home');
 });
 // app.get("/results/:id/newcomment", (req, res) => {
-//     res.locals.title = "About Us";
 
-//     Movies.find({
-//         _id: req.params.id
-//     }).populate("comments").exec((err, foundMovie) => {
-//         if (err) {
-//             console.log(err);
-//         } else {
-//             res.redirect("/results/" + foundMovie[0]['_id']);
-//         }
-//     });
-// });
+
 app.post("/results/:id/comments", (req, res) => {
     Movies.find({
         _id: req.params.id

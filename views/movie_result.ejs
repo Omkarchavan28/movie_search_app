@@ -231,7 +231,6 @@
 
 								<!------------------------------------------------------------------------->>
 								<% allmovies[0].comments.forEach(function(comment){ %>
-								<%console.log(comment)%>
 								<div class="review_item">
 									<div class="media">
 										<div class="d-flex">
@@ -240,9 +239,9 @@
 										<div class="media-body">
 											<h4><%= comment.username.username %></h4>
 											<%var b=comment.rating;%>
+											<%console.log(b)%>
 											<%var i;%>
 											<%for ( i = 0; i <b ; i++) {%>
-											<% document.write('<i class="fa fa-star"></i>');%>
 											<%}%>
 												<!-- <i class="fa fa-star"></i>
 												<i class="fa fa-star"></i>
@@ -322,76 +321,76 @@
 </section>
 <!--================End Product Description Area =================-->
 
+
 <script>
-	var ratingValue = 0;
-	$(document).ready(function () {
+    var ratingValue = 0;
+    $(document).ready(function () {
 
-		/* 1. Visualizing things on Hover - See next part for action on click */
-		$('#stars li').on('mouseover', function () {
-			var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
+        /* 1. Visualizing things on Hover - See next part for action on click */
+        $('#stars li').on('mouseover', function () {
+            var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
 
-			// Now highlight all the stars that's not after the current hovered star
-			$(this).parent().children('li.star').each(function (e) {
-				if (e < onStar) {
-					$(this).addClass('hover');
-				} else {
-					$(this).removeClass('hover');
-				}
-			});
+            // Now highlight all the stars that's not after the current hovered star
+            $(this).parent().children('li.star').each(function (e) {
+                if (e < onStar) {
+                    $(this).addClass('hover');
+                } else {
+                    $(this).removeClass('hover');
+                }
+            });
 
-		}).on('mouseout', function () {
-			$(this).parent().children('li.star').each(function (e) {
-				$(this).removeClass('hover');
-			});
-		});
-
-
-		/* 2. Action to perform on click */
-		$('#stars li').on('click', function () {
-			var onStar = parseInt($(this).data('value'), 10); // The star currently selected
-			var stars = $(this).parent().children('li.star');
-
-			for (i = 0; i < stars.length; i++) {
-				$(stars[i]).removeClass('selected');
-			}
-
-			for (i = 0; i < onStar; i++) {
-				$(stars[i]).addClass('selected');
-			}
-
-			// JUST RESPONSE (Not needed)
-			ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
-			var msg = "";
-			if (ratingValue > 1) {
-				msg = "Thanks! You rated this " + ratingValue + " stars.";
-			} else {
-				msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
-			}
-			responseMessage(msg);
-
-		});
+        }).on('mouseout', function () {
+            $(this).parent().children('li.star').each(function (e) {
+                $(this).removeClass('hover');
+            });
+        });
 
 
+        /* 2. Action to perform on click */
+        $('#stars li').on('click', function () {
+            var onStar = parseInt($(this).data('value'), 10); // The star currently selected
+            var stars = $(this).parent().children('li.star');
 
-	});
+            for (i = 0; i < stars.length; i++) {
+                $(stars[i]).removeClass('selected');
+            }
 
-	function responseMessage(msg) {
-		$('.success-box').fadeIn(200);
-		$('.success-box div.text-message').html("<span>" + msg + "</span>");
-	}
-	$('#submit').click(function (e) {
-		e.preventDefault();
+            for (i = 0; i < onStar; i++) {
+                $(stars[i]).addClass('selected');
+            }
+
+            // JUST RESPONSE (Not needed)
+            ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
+            var msg = "";
+            if (ratingValue > 1) {
+                msg = "Thanks! You rated this " + ratingValue + " stars.";
+            } else {
+                msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
+            }
+            responseMessage(msg);
+
+        });
+
+
+
+    });
+
+    function responseMessage(msg) {
+        $('.success-box').fadeIn(200);
+        $('.success-box div.text-message').html("<span>" + msg + "</span>");
+    }
+    $('#submit').click(function (e) {
+        e.preventDefault();
 
 		console.log('submit clicked');
-		var rate = parseInt($('#stars li.selected').last().data('value'), 10);
+		console.log(parseInt($('#stars li.selected').last().data('value'), 10));
 		$.post("/results/<%= allmovies[0]['_id'] %>/comments", {
-			ratinng: rate,
+			rating: parseInt($('#stars li.selected').last().data('value'), 10),
 			message: $("#textarea").val(),
 
 		});
 
-
-	});
+    });
 </script>
 
 <link rel="stylesheet" href="/css/aroma_style.css">
