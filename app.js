@@ -6,9 +6,9 @@ var express = require("express"),
     bodyParser = require("body-parser"),
     mongoose = require('mongoose'),
     Movies = require('./models/movies.js');
-    User = require('./models/user.js');
-    Comment = require('./models/comment.js');
-    flash = require('connect-flash');
+User = require('./models/user.js');
+Comment = require('./models/comment.js');
+flash = require('connect-flash');
 app.use(express.static('public'));
 app.use(express.static('vendors'));
 app.set("view engine", "ejs");
@@ -53,7 +53,7 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use(function (req, res, next) {
     res.locals.currentUser = req.user;
-    
+
     next();
 });
 
@@ -66,25 +66,48 @@ app.get("/", function (req, res) {
     res.locals.title = "Uwatch"; // THIS LINE IS KEY
     res.render('home');
 });
+app.get("/user/:id/fav", isLoggedIn, function (req, res) {
+    Movies.find({
+            _id: req.params.id
+        }, (err, movie) => {
+            if (err) {
+                console.log(err);
+            } else {
+                var fav={
+                    id:movie[0]._id,
+                    title:movie[0].title,
+                    imdbID:movie[0].imdbID
+                    
+                };
+                // movie[0].comments.push(data);
+                //     movie[0].save();
+                console.log(req.user.fav_movie)
+                req.user.fav_movie.push(fav);
+                req.user.save()
+                res.redirect("/results/" + req.params.id);
+                console.log(req.user.fav_movie)
 
-app.post("/results/:id/comments",isLoggedIn,function (req, res)  {
-    console.log("here")
+            }
+        });
+    
+});
+app.post("/results/:id/comments", isLoggedIn, function (req, res) {
     Movies.find({
         _id: req.params.id
     }, (err, movie) => {
         if (err) {
             console.log(err);
         } else {
-            var a=req.body;
+            var a = req.body;
             console.log(a)
-            var comment={
-                username:{
-                    id:req.user._id,
-                    username:req.user.username,
-                    email:req.user.email
+            var comment = {
+                username: {
+                    id: req.user._id,
+                    username: req.user.username,
+                    email: req.user.email
                 },
-                message:req.body.message,
-                rating:req.body.rating,
+                message: req.body.message,
+                rating: req.body.rating,
 
             }
 
@@ -127,16 +150,14 @@ app.get("/results", function (req, res) {
                         Movies.find({
                             imdbID: movie.imdbID
                         }, function (err, docs) {
-                            if (docs.length) {
-                            } else {
+                            if (docs.length) {} else {
                                 seed = [{
                                     title: movie.Title,
                                     imdbID: movie.imdbID
                                 }];
                                 Movies.create(seed, function (err, movie) {
                                     if (err) console.log("ERRRRRRR===" + err);
-                                    else {
-                                    }
+                                    else {}
                                 });
                             }
                         });
@@ -206,7 +227,7 @@ app.get("/aboutus", function (req, res) {
 
     res.render('aboutus');
 });
-app.get("/test",isLoggedIn,function (req, res) {
+app.get("/test", isLoggedIn, function (req, res) {
     res.locals.title = "About Us";
     res.render('test');
 });

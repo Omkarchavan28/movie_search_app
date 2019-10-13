@@ -26,7 +26,7 @@
 					</ul>
 
 					<div class="card_area d-flex align-items-center">
-						<a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
+						<a class="icon_btn" id="fav-btn" href="/user/<%= allmovies[0]['_id'] %>/fav"><i class="lnr lnr lnr-heart"></i></a>
 					</div>
 					<p><%= data['Plot'] %></p>
 
@@ -295,8 +295,8 @@
 
 								</section>
 							</div>
-							<form action="/results/<%= allmovies[0]['_id'] %>/comments"
-								class="form-contact form-review mt-3" method="POST">
+							<form action="/results/<%= allmovies[0]['_id'] %>"
+								class="form-contact form-review mt-3" method="GET">
 
 								<div class="form-group">
 									<textarea class="form-control different-control w-100" name="message" id="textarea"
@@ -379,7 +379,6 @@
 		$('.success-box div.text-message').html("<span>" + msg + "</span>");
 	}
 	$('#submit').click(function (e) {
-		e.preventDefault();
 
 		console.log('submit clicked');
 		console.log(parseInt($('#stars li.selected').last().data('value'), 10));
@@ -389,6 +388,8 @@
 
 		});
 	});
+
+	
 </script>
 
 <link rel="stylesheet" href="/css/aroma_style.css">
