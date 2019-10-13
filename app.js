@@ -66,8 +66,6 @@ app.get("/", function (req, res) {
     res.locals.title = "Uwatch"; // THIS LINE IS KEY
     res.render('home');
 });
-// app.get("/results/:id/newcomment", (req, res) => {
-
 
 app.post("/results/:id/comments", (req, res) => {
     Movies.find({
