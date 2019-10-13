@@ -239,6 +239,7 @@
 										<div class="media-body">
 											<h4><%= comment.username.username %></h4>
 												<div id="rating-stars">
+													<span><%=comment.rating%></span>
 												<!-- <i class="fa fa-star"></i>
 												<i class="fa fa-star"></i>
 												<i class="fa fa-star"></i>
@@ -322,6 +323,8 @@
 <script>
     var ratingValue = 0;
     $(document).ready(function () {
+
+
 
         /* 1. Visualizing things on Hover - See next part for action on click */
         $('#stars li').on('mouseover', function () {
