@@ -17,10 +17,11 @@ body{
 }
 
 .modal-wrapper {
+	margin-top: 5rem;
 	position: relative;
 	width: 80vw;
 	/* max-width: 400px; */
-	height: 90vh;
+	height: 80vh;
 	display: flex;
 	flex-flow: column wrap;
 	background-color: #ffffff;

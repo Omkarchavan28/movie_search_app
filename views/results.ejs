@@ -26,21 +26,21 @@
                         <span class=" d-flex info justify-content-start">*click on movie for more info</span>
                         <ul id="results" id="style-1" class=" mx-auto  list-group">
                             <% data["Search"].forEach(function(movie) { %>
-
+                                <%allmovies.forEach(function(movieInAll){%>
+                                    <% if(movie['Title']==movieInAll['title']){ %>
                             <li>
-                                <a href="<%= movie["Title"]%>" name='<%= movie["Title"]%>' style="border-radius: 0px" id="result-items"
+                                <a href="results/<%= movieInAll["_id"]%>" name='<%= movie["Title"]%>' style="border-radius: 0px" id="result-items"
                                     class="d-flex list-group-item list-group-item-action">
                                     <strong class="justify-content-start"><%= movie["Title"]%></strong>
                                     <span class="badge badge-primary badge-pill"><%= movie["Type"]%></span>
                                     <span class="badge badge-dark badge-pill"> <%= movie["Year"]%></span>
                                 </a>
                             </li>
-                            <%allmovies.forEach(function(movieInAll){%>
-                            <% if(movie['Title']==movieInAll['title']){ %>
-                            <script>
+                            <!-- <script>
+
                                 $("li > a").attr("href", "results/<%=movieInAll['_id']%>");
                                     
-                            </script>
+                            </script> -->
                             <%}%>
                            <% });%>
                             <%});%>

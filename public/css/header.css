@@ -20,3 +20,49 @@ float: right;
 ul{
     list-style: none;
 }
+/* ==================flash message================== */
+.alert.alert-success {
+  background-color: #55b559;
+  color: #fff;
+}
+.alert {
+  border: 0;
+  border-radius: 0;
+  padding: 20px 15px !important;
+  line-height: 20px;
+  font-weight: 300;
+  color: #fff;
+}
+.alert .alert-icon {
+  display: block;
+  float: left;
+  margin-right: 1.071rem;
+}
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+}
+.alert .close {
+  color: #fff;
+  text-shadow: none;
+  
+}
+.alert .close i {
+  font-size: 20px;
+}
+.alert .close:hover{
+  opacity: 1;
+  color: #fff;
+}    
+.alert.alert-info {
+  background-color: #00cae3;
+  color: #fff;
+}
+
+.alert.alert-danger {
+background-color: #f55145;
+color: #fff;
+}

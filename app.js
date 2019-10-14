@@ -8,7 +8,6 @@ var express = require("express"),
     Movies = require('./models/movies.js');
 User = require('./models/user.js');
 Comment = require('./models/comment.js');
-flash = require('connect-flash');
 app.use(express.static('public'));
 app.use(express.static('vendors'));
 app.set("view engine", "ejs");
@@ -17,6 +16,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
+var flash = require('connect-flash');
+app.use(flash())
 //database
 //Import the mongoose module
 
@@ -60,7 +62,13 @@ app.use(function (req, res, next) {
 
 var total_pages = 1;
 app.get("/", function (req, res) {
-    
+    if (!req.user) {
+        req.flash("home_Login", "Please Log-In for Better User Experience");
+        res.locals.messages = req.flash();
+    } else if (req.user) {
+        req.flash("welcome", "Welcome " + req.user.username + " to Uwatch");
+        res.locals.messages = req.flash();
+    }
     res.locals.title = "Uwatch"; // THIS LINE IS KEY
     res.render('home');
 });
@@ -231,7 +239,7 @@ app.get("/aboutus", function (req, res) {
     res.render('aboutus');
 });
 app.get("/test", isLoggedIn, function (req, res) {
-    id=req.user.fav_movie[0].id
+    id = req.user.fav_movie[0].id
 
     Movies.find({
         _id: id
@@ -240,8 +248,9 @@ app.get("/test", isLoggedIn, function (req, res) {
             console.log(err);
         } else {
             console.log(movie)
-    
-        }});
+
+        }
+    });
     res.locals.title = "About Us";
     res.render('test');
 });
@@ -251,6 +260,8 @@ app.get("/test", isLoggedIn, function (req, res) {
 //show registe form
 
 app.get("/register", function (req, res) {
+    res.locals.title = "Sign Up";
+
     res.render("register");
 });
 //handel signup
@@ -263,8 +274,19 @@ app.post("/register", function (req, res) {
     User.register(newUser, req.body.password, function (err, user) {
         if (err) {
             console.log("==================");
-            console.log(err);
+            // console.log(err);
+            if (err.code == 11000) {
+
+                req.flash("email", "A user with the given Email is already registered");
+                res.locals.messages = req.flash();
+            } else {
+                req.flash(err.name, err.message);
+                res.locals.messages = req.flash();
+            }
+
             console.log("==================");
+            res.locals.title = "Login";
+            console.log(err)
             return res.render("login");
         }
         passport.authenticate("local")(req, res, function () {
@@ -285,6 +307,7 @@ app.post('/login', passport.authenticate("local", {
     failureRedirect: "/login",
 
 }), function (req, res) {
+    
 
 });
 //logout

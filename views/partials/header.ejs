@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Gayathri&display=swap" rel="stylesheet">
     <link href="/css/fonts.css" rel="stylesheet">
     <link rel="icon" href="img/Fevicon.png" type="image/png">
-    
+
     <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="/themify-icons/themify-icons.css">
@@ -28,8 +28,16 @@
     <script src="/nice-select/jquery.nice-select.min.js"></script>
     <script src="/jquery.ajaxchimp.min.js"></script>
     <script src="/mail-script.js"></script>
-
     <script src="../js/main.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+
 </head>
 
 
@@ -83,4 +91,62 @@
         </div>
     </header>
     <!--================ End Header Menu Area =================-->
-   
+    <div style="z-index: 100;">
+
+    <% if (locals.messages) { %>
+                            <%if(messages.home_Login){%>
+                            <div class="alert alert-info" style="z-index: 10;">
+                                <div class=" container">
+                                    <div class="alert-icon">
+                                        <i class="material-icons">info_outline</i>
+                                    </div>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                                    </button>
+
+                                    <b><%=messages.home_Login%></b>
+                                </div>
+                            </div>
+                            <%}else if(messages.welcome){ %>
+
+                            <div class="alert alert-success" style="z-index: 10;">
+                                <div class="container">
+                                    <div class="alert-icon">
+                                        <i class="material-icons">check</i>
+                                    </div>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                                    </button>
+                                    <b>Login Success:</b> <%=messages.welcome%>
+                                </div>
+                            </div>
+                            <%} else if(messages.UserExistsError ){ %>
+
+                            <div class="alert alert-danger" style="z-index: 10;">
+                                <div class="container">
+                                    <div class="alert-icon">
+                                        <i class="material-icons">check</i>
+                                    </div>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                                    </button>
+                                    <b> Alert:</b> <%=messages.UserExistsError[0]%>
+                                </div>
+                            </div>
+                            <%} else if(messages.email ){ %>
+
+                                <div class="alert alert-danger" style="z-index: 10;">
+                                    <div class="container">
+                                        <div class="alert-icon">
+                                            <i class="material-icons">check</i>
+                                        </div>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                                        </button>
+                                        <b> Alert:</b> <%=messages.email%>
+                                    </div>
+                                </div>
+                                <%}%>
+                            
+                            <%}%>
+                    </div>

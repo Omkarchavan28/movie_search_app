@@ -10,6 +10,9 @@ html {
     width: 100%;
     
 }
+.container-fluid.main-content {
+    margin-top: 5rem;
+}
 #main_container{
     padding-top: 20%;
 }

@@ -1,85 +1,94 @@
 <% include partials/header%>
 <link rel="stylesheet" href="/css/loginSignup.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">  
-<div class="body">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<style>
+	.main-content {
+		margin-top: 5rem;
+	}
+</style>
 
-	<div class="modal-wrapper">
-		<div class="login-wrapper">
-			<div class="collapsed-section hidden">
-				<div class="hide-section">
-					<h2 class="collapsed-heading">Have an Account?</h2>
-					<p class="collapsed-text">To keep connected with us please<br>login with your personal info</p>
-					<button class="collapsed-btn" onclick="toggleOpen()">Log In</button>
+	<div class="body">
+
+		<div class="modal-wrapper">
+			<div class="login-wrapper">
+				<div class="collapsed-section hidden">
+					<div class="hide-section">
+						<h2 class="collapsed-heading">Have an Account?</h2>
+						<p class="collapsed-text">To keep connected with us please<br>login with your personal info</p>
+						<button class="collapsed-btn" onclick="toggleOpen()">Log In</button>
+					</div>
 				</div>
-			</div>
-			<div class="form-wrapper login">
-				<h2 class="form-heading">Log In To Your Profile</h2>
-				<div class="other-icons">
-					<a href="#">
-							<i class="fab fa fa-facebook-f" ></i>
+				<div class="form-wrapper login">
+					<h2 class="form-heading">Log In To Your Profile</h2>
+					<div class="other-icons">
+						<a href="#">
+							<i class="fab fa fa-facebook-f"></i>
 						</a>
-					<a href="#">
-						<i class="fab fa fa-google"></i>
-					</a>
-					<a href="#">
-						<i class="fab fa fa-twitter"></i>
-					</a>
-				</div>
-				<form action="/login" method="POST" class="form login">
-					<span>or use your email account:</span>
-					<div class="input-field">
-						<i class="fas fa fa-envelope"></i>
-						<input name="username" type="username" placeholder="username" value="">
+						<a href="#">
+							<i class="fab fa fa-google"></i>
+						</a>
+						<a href="#">
+							<i class="fab fa fa-twitter"></i>
+						</a>
 					</div>
-					<div class="input-field">
-						<i class="fas fa fa-key"></i>
-						<input name="password" type="password" placeholder="Password" value="">
-					</div>
-					<a href="#" id="forgot-password">Forgot Your Password?</a>
-					<button value="Submit" class="form-btn" name="submitDetails" type="submit">Log In</button>
-				</form>
-			</div>
-		</div>
-		<div class="signup-wrapper">
-			<div class="collapsed-section">
-				<div class="hide-section">
-					<h2 class="collapsed-heading">New Here?</h2>
-					<p class="collapsed-text">Enter your personal details<br>and start journey with us!</p>
-					<button class="collapsed-btn" onclick="toggleOpen()">Sign Up</button>
+					<form action="/login" method="POST" class="form login">
+						<span>or use your email account:</span>
+						<div class="input-field">
+							<i class="fas fa fa-envelope"></i>
+							<input name="username" type="username" placeholder="username" value="">
+						</div>
+						<div class="input-field">
+							<i class="fas fa fa-key"></i>
+							<input name="password" type="password" placeholder="Password" value="">
+						</div>
+						<a href="#" id="forgot-password">Forgot Your Password?</a>
+						<button value="Submit" class="form-btn" name="submitDetails" type="submit">Log In</button>
+					</form>
 				</div>
 			</div>
-			<div class="form-wrapper signup hidden">
-				<h2 class="form-heading">Create Account</h2>
-				<div class="other-icons">
-					<a href="#">
-						<i class="fab fa fa-facebook-f"></i>
-					</a>
-					<a href="#">
-						<i class="fab fa fa-google"></i>
-					</a>
-					<a href="#">
-						<i class="fab fa fa-twitter"></i>
-					</a>
+			<div class="signup-wrapper">
+				<div class="collapsed-section">
+					<div class="hide-section">
+						<h2 class="collapsed-heading">New Here?</h2>
+						<p class="collapsed-text">Enter your personal details<br>and start journey with us!</p>
+						<button class="collapsed-btn" onclick="toggleOpen()">Sign Up</button>
+					</div>
 				</div>
-				<form action="/register" method="POST" class="form login">
-					<span>or use your email for registration:</span>
-					<div class="input-field">
-						<i class="fas fa fa-user"></i>
-						<input type="text" name="username" placeholder="Name" value="">
+				<div class="form-wrapper signup hidden">
+					
+
+					<h2 class="form-heading">Create Account</h2>
+					<div class="other-icons">
+						<a href="#">
+							<i class="fab fa fa-facebook-f"></i>
+						</a>
+						<a href="#">
+							<i class="fab fa fa-google"></i>
+						</a>
+						<a href="#">
+							<i class="fab fa fa-twitter"></i>
+						</a>
 					</div>
-					<div class="input-field">
-						<i class="fas fa fa-envelope"></i>
-						<input type="email" name="email" placeholder="Email" value="">
-					</div>
-					<div class="input-field">
-						<i class="fas fa fa-key"></i>
-						<input type="password" name="password" placeholder="Password" value="">
-					</div>
-					<button class="form-btn" type="submit" name="submitDetails" value="Submit">Sign Up</button>
-				</form>
+					<form action="/register" method="POST" class="form login">
+						<span>or use your email for registration:</span>
+						<div class="input-field">
+							<i class="fas fa fa-user"></i>
+							<input type="text" name="username" placeholder="Name" value="">
+						</div>
+						<div class="input-field">
+							<i class="fas fa fa-envelope"></i>
+							<input type="email" name="email" placeholder="Email" value="">
+						</div>
+						<div class="input-field">
+							<i class="fas fa fa-key"></i>
+							<input type="password" name="password" placeholder="Password" value="">
+						</div>
+						<button class="form-btn" type="submit" name="submitDetails" value="Submit">Sign Up</button>
+					</form>
+				</div>
 			</div>
-		</div>
 	</div>
+
 </div>
 <script>
 	//DIVS to toggle

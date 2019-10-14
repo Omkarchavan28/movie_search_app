@@ -178,7 +178,7 @@ a {
 
 .header_area .navbar .nav .nav-item:hover .nav-link,
 .header_area .navbar .nav .nav-item.active .nav-link {
-    color: #384aeb
+    color: #0288D1
 }
 
 .header_area .navbar .nav .nav-item.submenu {
@@ -249,7 +249,7 @@ a {
 }
 
 .header_area .navbar .nav .nav-item.submenu ul .nav-item:hover .nav-link {
-    background: #384aeb;
+    background: #0288D1;
     color: #fff
 }
 
@@ -440,7 +440,7 @@ a {
 .nav-shop li button .nav-shop__circle {
     font-size: 9px;
     display: inline-block;
-    background: #384aeb;
+    background: #0288D1;
     color: #fff;
     padding: 0px 5px;
     border-radius: 50%;
@@ -450,7 +450,8 @@ a {
 }
 
 .nav-shop li:last-child {
-    margin-left: 40px
+    margin-left: 40px;
+    margin-top: 15px;
 }
 
 @media (max-width: 1619px) {
@@ -507,11 +508,15 @@ a {
         position: relative
     }
 
+    .navbar-toggler {
+        border: 0px !important
+    }
+
     .navbar-toggler span {
         display: block;
         width: 25px;
         height: 3px;
-        background: #384aeb;
+        background: #0288D1;
         margin: auto;
         margin-bottom: 4px;
         transition: all 400ms linear;
@@ -546,7 +551,8 @@ a {
     }
 
     .header_area .navbar .nav-shop {
-        padding-bottom: 40px
+        padding-bottom: 40px;
+        text-align: center;
     }
 
     .header_area .navbar .search {
@@ -762,7 +768,7 @@ a {
 }
 
 .section-intro__style {
-    border-bottom: 2px solid #384aeb;
+    border-bottom: 2px solid #0288D1;
     padding-bottom: 8px
 }
 
@@ -783,7 +789,7 @@ a {
     display: block;
     width: 5%;
     height: 100%;
-    background: #384aeb;
+    background: #0288D1;
     position: absolute;
     top: 0;
     left: 0
@@ -877,7 +883,7 @@ a {
 .hero-carousel__slideOverlay {
     position: absolute;
     bottom: 50px;
-    background: #384aeb;
+    background: #0288D1;
     padding: 23px 90px 23px 25px;
     transform: translateY(50px);
     opacity: 0;
@@ -952,7 +958,7 @@ a {
 }
 
 .card-product__imgOverlay li button:hover {
-    background: #384aeb
+    background: #0288D1
 }
 
 .card-product__imgOverlay li:not(:last-child) {
@@ -975,7 +981,7 @@ a {
 }
 
 .card-product:hover .card-product__title a {
-    color: #384aeb
+    color: #0288D1
 }
 
 .offer {
@@ -1032,13 +1038,13 @@ a {
 #bestSellerCarousel .owl-next i,
 #bestSellerCarousel .owl-next span {
     font-size: 15px;
-    color: #384aeb;
+    color: #0288D1;
     line-height: 40px
 }
 
 #bestSellerCarousel .owl-prev:hover,
 #bestSellerCarousel .owl-next:hover {
-    background: #384aeb
+    background: #0288D1
 }
 
 #bestSellerCarousel .owl-prev:hover i,
@@ -1129,11 +1135,11 @@ a {
 }
 
 .card-blog:hover .card-blog__title a {
-    color: #384aeb
+    color: #0288D1
 }
 
 .card-blog:hover .card-blog__link {
-    color: #384aeb
+    color: #0288D1
 }
 
 .card-blog:hover .card-blog__link i,
@@ -1176,7 +1182,7 @@ a {
     position: absolute;
     top: 50px;
     left: 10px;
-    color: #384aeb
+    color: #0288D1
 }
 
 .subscribe-form .form-control {
@@ -1220,12 +1226,12 @@ a {
 
 .button {
     display: inline-block;
-    border: 1px solid #384aeb;
+    border: 1px solid #0288D1;
     border-radius: 30px;
     color: #222;
     font-weight: 500;
     padding: 12px 50px;
-    background: #384aeb;
+    background: #0288D1;
     color: #fff;
     transition: all .4s ease
 }
@@ -1258,7 +1264,7 @@ a {
 }
 
 .button-blog:hover {
-    background: #384aeb !important;
+    background: #0288D1 !important;
     color: #fff !important
 }
 
@@ -1315,12 +1321,12 @@ a {
 }
 
 .button--active {
-    background: #384aeb;
+    background: #0288D1;
     color: #fff
 }
 
 .button-contactForm {
-    border: 1px solid #384aeb !important;
+    border: 1px solid #0288D1 !important;
     border-radius: 0;
     padding: 11px 26px
 }
@@ -1331,7 +1337,7 @@ a {
 }
 
 .button:hover {
-    border-color: #384aeb;
+    border-color: #0288D1;
     background: transparent;
     color: #222
 }
@@ -1412,12 +1418,12 @@ a {
 }
 
 .blog-banner-btn {
-    border: 2px solid #384aeb;
+    border: 2px solid #0288D1;
     padding: 10px 45px
 }
 
 .blog-banner-btn:hover {
-    background: #384aeb;
+    background: #0288D1;
     color: #fff
 }
 
@@ -1471,7 +1477,7 @@ a {
 }
 
 .l_blog_item .l_blog_text h4:hover {
-    color: #384aeb
+    color: #0288D1
 }
 
 .l_blog_item .l_blog_text p {
@@ -1497,7 +1503,7 @@ a {
 }
 
 .causes_slider .owl-dots .owl-dot.active {
-    background: #384aeb
+    background: #0288D1
 }
 
 .causes_item {
@@ -1520,7 +1526,7 @@ a {
 .causes_item .causes_img .c_parcent span {
     width: 70%;
     height: 3px;
-    background: #384aeb;
+    background: #0288D1;
     position: absolute;
     left: 0px;
     bottom: 0px
@@ -1531,7 +1537,7 @@ a {
     position: absolute;
     right: -10px;
     bottom: 0px;
-    background: #384aeb;
+    background: #0288D1;
     color: #fff;
     padding: 0px 5px
 }
@@ -1549,7 +1555,7 @@ a {
 }
 
 .causes_item .causes_text h4:hover {
-    color: #384aeb
+    color: #0288D1
 }
 
 .causes_item .causes_text p {
@@ -1561,11 +1567,11 @@ a {
 
 .causes_item .causes_bottom a {
     width: 50%;
-    border: 1px solid #384aeb;
+    border: 1px solid #0288D1;
     text-align: center;
     float: left;
     line-height: 50px;
-    background: #384aeb;
+    background: #0288D1;
     color: #fff;
     font-size: 14px;
     font-weight: 500
@@ -1626,7 +1632,7 @@ a {
 }
 
 .tags .tag_btn:before {
-    background: #384aeb
+    background: #0288D1
 }
 
 .tags .tag_btn+.tag_btn {
@@ -1721,7 +1727,7 @@ a {
 }
 
 .blog_info .post_tag a.active {
-    color: #384aeb
+    color: #0288D1
 }
 
 .blog_info .blog_meta li a {
@@ -1742,7 +1748,7 @@ a {
 }
 
 .blog_info .blog_meta li a:hover {
-    color: #384aeb
+    color: #0288D1
 }
 
 .blog_post img {
@@ -1762,7 +1768,7 @@ a {
 }
 
 .blog_details h2:hover {
-    color: #384aeb
+    color: #0288D1
 }
 
 .blog_details p {
@@ -1788,7 +1794,7 @@ a {
 .blog_right_sidebar .widget_title {
     font-size: 18px;
     line-height: 25px;
-    background: #384aeb;
+    background: #0288D1;
     text-align: center;
     color: #fff;
     padding: 8px 0px;
@@ -1805,7 +1811,7 @@ a {
     padding-left: 20px;
     border-radius: 45px;
     z-index: 0;
-    background: #384aeb
+    background: #0288D1
 }
 
 .blog_right_sidebar .search_widget .input-group .form-control.placeholder {
@@ -1873,7 +1879,7 @@ a {
 }
 
 .blog_right_sidebar .author_widget .social_icon a:hover {
-    color: #384aeb
+    color: #0288D1
 }
 
 .blog_right_sidebar .popular_post_widget .post_item .media-body {
@@ -1891,7 +1897,7 @@ a {
 }
 
 .blog_right_sidebar .popular_post_widget .post_item .media-body h3:hover {
-    color: #384aeb
+    color: #0288D1
 }
 
 .blog_right_sidebar .popular_post_widget .post_item .media-body p {
@@ -1925,11 +1931,11 @@ a {
 }
 
 .blog_right_sidebar .post_category_widget .cat-list li:hover {
-    border-color: #384aeb
+    border-color: #0288D1
 }
 
 .blog_right_sidebar .post_category_widget .cat-list li:hover a {
-    color: #384aeb
+    color: #0288D1
 }
 
 .blog_right_sidebar .newsletter_widget {
@@ -1990,7 +1996,7 @@ a {
 }
 
 .blog_right_sidebar .newsletter_widget .bbtns {
-    background: #384aeb;
+    background: #0288D1;
     color: #fff;
     font-size: 12px;
     line-height: 38px;
@@ -2020,7 +2026,7 @@ a {
 }
 
 .blog_right_sidebar .tag_cloud_widget ul li a:hover {
-    background: #384aeb;
+    background: #0288D1;
     color: #fff
 }
 
@@ -2050,7 +2056,7 @@ a {
 }
 
 .blog-pagination .page-item.active .page-link {
-    background-color: #384aeb;
+    background-color: #0288D1;
     border-color: transparent;
     color: #fff
 }
@@ -2077,7 +2083,7 @@ a {
 .blog-pagination .page-link:hover {
     color: #fff;
     text-decoration: none;
-    background-color: #384aeb;
+    background-color: #0288D1;
     border-color: #eee
 }
 
@@ -2312,7 +2318,7 @@ a {
 }
 
 .comments-area .btn-reply:hover {
-    background-color: #384aeb;
+    background-color: #0288D1;
     color: #fff;
     font-weight: 700
 }
@@ -2462,12 +2468,12 @@ a {
 }
 
 .contact-banner-btn {
-    border: 2px solid #384aeb;
+    border: 2px solid #0288D1;
     padding: 10px 45px
 }
 
 .contact-banner-btn:hover {
-    background: #384aeb;
+    background: #0288D1;
     color: #fff
 }
 
@@ -2477,7 +2483,7 @@ a {
 
 .contact-info__icon i,
 .contact-info__icon span {
-    color: #384aeb;
+    color: #0288D1;
     font-size: 20px
 }
 
@@ -2594,7 +2600,7 @@ a {
 .sidebar-categories .head {
     font-family: 'Oswald', sans-serif;
     line-height: 50px;
-    background: #384aeb;
+    background: #0288D1;
     padding: 0 30px;
     font-size: 18px;
     font-weight: 400;
@@ -2619,7 +2625,7 @@ a {
 }
 
 .sidebar-categories .main-nav-list a:hover {
-    color: #384aeb
+    color: #0288D1
 }
 
 .sidebar-categories .main-nav-list a .number {
@@ -2643,7 +2649,7 @@ a {
 .sidebar-filter .top-filter-head {
     font-family: 'Oswald', sans-serif;
     line-height: 50px;
-    background: #384aeb;
+    background: #0288D1;
     padding: 0 30px;
     font-size: 18px;
     font-weight: 400;
@@ -2773,14 +2779,14 @@ a {
 }
 
 .pixel-radio:checked {
-    border: 8px solid #384aeb
+    border: 8px solid #0288D1
 }
 
 .pixel-radio:checked::after {
     -webkit-animation: click-wave 0.65s;
     -moz-animation: click-wave 0.65s;
     animation: click-wave 0.65s;
-    background: #384aeb;
+    background: #0288D1;
     content: '';
     display: block;
     width: 15px;
@@ -2832,7 +2838,7 @@ a {
     top: -5px;
     border-radius: 50%;
     border: 0px;
-    background: #384aeb;
+    background: #0288D1;
     box-shadow: none;
     cursor: pointer;
     -webkit-transition: ease 0.1s;
@@ -2846,7 +2852,7 @@ a {
 }
 
 .price-range-area .noUi-horizontal .noUi-handle:hover {
-    border: 3px solid #384aeb;
+    border: 3px solid #0288D1;
     background: #fff
 }
 
@@ -2918,7 +2924,7 @@ a {
 }
 
 .single-search-product:hover .title {
-    color: #384aeb
+    color: #0288D1
 }
 
 .order-wrapper {
@@ -2971,7 +2977,7 @@ a {
 
 .billing-alert {
     font-size: 18px;
-    color: #384aeb;
+    color: #0288D1;
     margin-bottom: 30px
 }
 
@@ -3127,7 +3133,7 @@ a {
 }
 
 .check_title h2 a {
-    color: #384aeb;
+    color: #0288D1;
     text-decoration: underline
 }
 
@@ -3241,9 +3247,9 @@ a {
 }
 
 .tp_btn:hover {
-    background: #384aeb;
+    background: #0288D1;
     color: #fff;
-    border-color: #384aeb
+    border-color: #0288D1
 }
 
 .billing_details h3 {
@@ -3343,7 +3349,7 @@ a {
 }
 
 .billing_details .contact_form .form-group .creat_account a {
-    color: #384aeb
+    color: #0288D1
 }
 
 .order_box {
@@ -3454,8 +3460,8 @@ a {
 }
 
 .order_box .payment_item.active h4:before {
-    background: #384aeb;
-    border-color: #384aeb
+    background: #0288D1;
+    border-color: #0288D1
 }
 
 .order_box .creat_account {
@@ -3658,7 +3664,7 @@ a {
 
 .order_box .creat_account a {
     font-size: 12px;
-    color: #384aeb
+    color: #0288D1
 }
 
 .login_box_area .login_box_img {
@@ -3689,7 +3695,7 @@ a {
     height: 100%;
     width: 100%;
     content: "";
-    background: #384aeb;
+    background: #0288D1;
     opacity: .9
 }
 
@@ -4088,7 +4094,7 @@ a {
     height: 40px;
     line-height: 38px;
     text-transform: uppercase;
-    background: #384aeb;
+    background: #0288D1;
     padding: 0px 38px;
     margin-right: 5px;
     margin-left: 10px;
@@ -4144,7 +4150,7 @@ a {
     height: 10px;
     width: 10px;
     border-radius: 50%;
-    background: #384aeb;
+    background: #0288D1;
     display: inline-block;
     position: absolute;
     right: 3px;
@@ -4221,7 +4227,7 @@ a {
     padding: 0px 44px;
     line-height: 38px;
     text-transform: capitalize;
-    background: #384aeb;
+    background: #0288D1;
     border-radius: 30px;
     color: #fff;
     font-weight: 500
@@ -4296,7 +4302,7 @@ a {
     font-family: "Roboto", sans-serif;
     font-size: 24px;
     font-weight: 700;
-    color: #384aeb;
+    color: #0288D1;
     margin-bottom: 10px
 }
 
@@ -4492,8 +4498,8 @@ a {
 
 .product_description_area .nav.nav-tabs li a.active {
     color: #fff;
-    background: #384aeb;
-    border-color: #384aeb
+    background: #0288D1;
+    border-color: #0288D1
 }
 
 .product_description_area .tab-content {
@@ -4513,7 +4519,7 @@ a {
 .product_description_area .tab-content .total_rate .box_total h4 {
     font-size: 48px;
     font-weight: bold;
-    color: #384aeb
+    color: #0288D1
 }
 
 .product_description_area .tab-content .total_rate .box_total h5 {
@@ -4637,8 +4643,8 @@ a {
 }
 
 .review_item .media .media-body .reply_btn:hover {
-    background: #384aeb;
-    border-color: #384aeb;
+    background: #0288D1;
+    border-color: #0288D1;
     color: #fff
 }
 
@@ -4750,7 +4756,7 @@ a {
     height: 28px;
     line-height: 28px;
     text-align: center;
-    background: #384aeb;
+    background: #0288D1;
     color: #ffffff;
     border-radius: 20px
 }
@@ -4765,7 +4771,7 @@ a {
 }
 
 .tp_widgets .list li a:hover {
-    color: #384aeb
+    color: #0288D1
 }
 
 .tp_widgets .list li:last-child {
@@ -4814,7 +4820,7 @@ a {
 }
 
 .footer-bottom .footer-text a {
-    color: #384aeb;
+    color: #0288D1;
     opacity: 1
 }
 
