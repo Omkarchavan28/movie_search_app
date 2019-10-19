@@ -1,21 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-font-smoothing: antialiased;
-	-moz-font-smoothing: antialiased;
-	-o-font-smoothing: antialiased;
-	font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
-}
 
-body{
+body {
 	background-color: #0288D1 !important;
 }
+
 .form {
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
 	font-weight: 100;
@@ -24,7 +13,7 @@ body{
 	color: #777;
 	max-width: 400px;
 	width: 100%;
-	
+
 }
 
 #contact input[type="text"],
