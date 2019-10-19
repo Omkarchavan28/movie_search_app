@@ -12,13 +12,6 @@ html {
     color: aliceblue;
 
 }
-#result-items{
-    background-color: #fff;
-    
-}
-#result-items:hover{
-    background-color: #0288d1;
-}
 #Result_header{
     font-family:'pennaregular';
     font-size: 7em;
@@ -30,6 +23,13 @@ html {
     color: #fff;
     font-size: 1em;
 
+}
+#result-items{
+    background-color: #fff;
+    
+}
+#result-items:hover{
+    background-color: #0288d1;
 }
 #res_dis_search{
     font-family: 'pennaregular';
