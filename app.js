@@ -357,6 +357,14 @@ app.get('/logout', function (req, res) {
 });
 
 
+app.get("/team", function (req, res) {
+    res.locals.title = "Uwatch"; // THIS LINE IS KEY
+
+    res.render('team');
+
+});
+
+
 app.get("/temp", function (req, res) {
     res.locals.title = "Uwatch"; // THIS LINE IS KEY
 
