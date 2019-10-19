@@ -63,7 +63,7 @@
 
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link ">Contact Us</a>
+                                <a href="/contactUS" class="nav-link ">Contact Us</a>
 
                             </li>
                             <li class="nav-item">
@@ -135,18 +135,30 @@
                             </div>
                             <%} else if(messages.email ){ %>
 
-                                <div class="alert alert-danger" style="z-index: 10;">
-                                    <div class="container">
-                                        <div class="alert-icon">
-                                            <i class="material-icons">check</i>
-                                        </div>
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true"><i class="material-icons">clear</i></span>
-                                        </button>
-                                        <b> Alert:</b> <%=messages.email%>
+                            <div class="alert alert-danger" style="z-index: 10;">
+                                <div class="container">
+                                    <div class="alert-icon">
+                                        <i class="material-icons">check</i>
                                     </div>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                                    </button>
+                                    <b> Alert:</b> <%=messages.email%>
                                 </div>
-                                <%}%>
-                            
+                            </div>
+                            <%} else if(messages.loginError ){ %>
+                            <%console.log("====="+messages.loginError)%>
+                            <div class="alert alert-danger" style="z-index: 10;">
+                                <div class="container">
+                                    <div class="alert-icon">
+                                        <i class="material-icons">check</i>
+                                    </div>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                                    </button>
+                                    <b> Alert:</b> <%=messages.loginError%>
+                                </div>
+                            </div>
+                            <%}%>
                             <%}%>
                     </div>

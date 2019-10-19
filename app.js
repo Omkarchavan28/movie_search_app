@@ -134,7 +134,11 @@ app.post("/results/:id/comments", isLoggedIn, function (req, res) {
 
     });
 });
+app.get("/contactUS", function (req, res) {
 
+    res.locals.title = "Contact Us" ;
+    res.render('contactUs');
+});
 app.get("/results", function (req, res) {
 
     var search_key = req.query.search;
@@ -304,11 +308,19 @@ app.get('/login', function (req, res) {
 //handle login
 app.post('/login', passport.authenticate("local", {
     successRedirect: "/",
-    failureRedirect: "/login",
-
+    failureRedirect: "/loginfailed"
 }), function (req, res) {
-    
 
+
+});
+app.get("/loginfailed", function (req, res) {
+    if (!req.user) {
+        res.locals.title = "Uwatch"; // THIS LINE IS KEY
+
+        req.flash("loginError", "Username or password is incorrect.");
+        res.locals.messages = req.flash();
+        res.render('login');
+    }
 });
 //logout
 app.get('/logout', function (req, res) {
