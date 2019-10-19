@@ -8,6 +8,7 @@ var express = require("express"),
     Movies = require('./models/movies.js');
 User = require('./models/user.js');
 Comment = require('./models/comment.js');
+ContactForm = require('./models/contactForm.js');
 app.use(express.static('public'));
 app.use(express.static('vendors'));
 app.set("view engine", "ejs");
@@ -134,11 +135,38 @@ app.post("/results/:id/comments", isLoggedIn, function (req, res) {
 
     });
 });
-app.get("/contactUS", function (req, res) {
+app.get("/contactUs", function (req, res) {
 
-    res.locals.title = "Contact Us" ;
+    res.locals.title = "Contact Us";
     res.render('contactUs');
 });
+app.post("/contactUs", function (req, res) {
+    var form = {
+        username: req.body.username,
+        email: req.body.email,
+        phone: req.body.phone,
+        message: req.body.message
+    }
+
+    console.log(form)
+    ContactForm.create(form, function (err, form1) {
+        if (err) {
+            
+            res.locals.title = "Contact Us";
+            res.render('sucessform',{
+                isPass:false
+            })
+            console.log("ERRRRRRR===" + err);
+        } else {
+            res.locals.title = "Contact Us";
+            res.render('sucessform',{
+                isPass:true
+            })
+            console.log("movie added" + form1);
+        }
+    });
+});
+
 app.get("/results", function (req, res) {
 
     var search_key = req.query.search;
